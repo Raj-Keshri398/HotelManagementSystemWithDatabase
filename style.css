@@ -1,0 +1,215 @@
+/* style.css */
+
+/* Body font */
+body {
+    font-family: sans-serif;
+}
+
+/* Header banner styles */
+.header-banner {
+    background: url('h-img1.jpg') no-repeat center center;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+    width: 100%;
+}
+
+.header-banner .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-banner h1 span {
+    color: orange;
+}
+
+/* Navbar styling */
+.navbar {
+    transition: all 0.3s ease-in-out;
+    padding-bottom: 20px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+/* Room card styling */
+.room-card {
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.room-card img {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.room-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.room-card .card-body .btn {
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-banner {
+        height: 220px;
+    }
+    .header-banner h1 {
+        font-size: 1.8rem;
+    }
+    .header-banner p {
+        font-size: 1rem;
+    }
+}
+
+/* Booking Overlay Styles */
+#bookingOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+#bookingOverlay > div {
+    background: white;
+    padding: 25px;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 8px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#closeBooking {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+
+/* Service cards styling */
+.service-card {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(253, 251, 251);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    /* For better alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover effect */
+.service-card:hover,
+.service-card.active {
+    background: #e9c455; /* Bootstrap's warning color */
+    color: #212529; /* dark text */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transform: translateY(-6px);
+}
+
+.service-card:hover i,
+.service-card.active i {
+    color: #212529 !important; /* dark icon on hover/active */
+}
+
+/* Smooth transition for icon color */
+.service-card i {
+    transition: color 0.3s ease;
+}
+
+
+/* Gallery horizontal scroll container */
+.gallery-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+  padding-bottom: 10px;
+}
+
+/* Gallery images with fixed square size */
+.gallery-img {
+  flex-shrink: 0; /* prevent shrinking */
+  width: 180px;   /* fixed width */
+  height: 180px;  /* fixed height */
+  object-fit: cover; /* crop/scale images nicely */
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Zoom effect on hover */
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Hide vertical scrollbar but keep horizontal */
+.gallery-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+.gallery-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* contact section styling */
+#contact_us input, #contact_us textarea {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+#contact_us input:focus, #contact_us textarea:focus {
+    border-color: #ffc107;
+    box-shadow: 0px 0px 10px rgba(255, 193, 7, 0.5);
+}
+
+#contact_us button:hover {
+    background: #ffb300;
+    transform: scale(1.03);
+}
